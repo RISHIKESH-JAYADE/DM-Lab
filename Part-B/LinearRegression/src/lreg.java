@@ -3,8 +3,7 @@ import java.util.*;
 
 class lreg
 {
-	public static void main(String args[])
-	{
+	public static void main(String args[]) {
 		double M=-1000;
 		double B=-1000;
 		//y=5x+2

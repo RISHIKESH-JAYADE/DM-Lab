@@ -3,7 +3,6 @@ import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
 
-
 public class Demo {
 
 	public static ArrayList<DataPoint> getInput(String filename, String delimiter){

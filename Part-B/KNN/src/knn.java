@@ -24,8 +24,7 @@ class knn
 		int k = in.nextInt();
 		int i;
 		ArrayList<comp> al = new ArrayList<>();
-		while(data != null)
-		{
+		while(data != null) {
 			String[] dataarray = data.split(",");
 			int sum=0;
 			for(i=0;i<2;i++)
@@ -37,18 +36,19 @@ class knn
 			data = csv.readLine();
 		}
 		Collections.sort(al, new Comparator<comp>() {
-		@Override public int compare(comp p1, comp p2) {
-		if(p1.a == p2.a)
-			return 0;
-		else if(p1.a > p2.a)
-			return 1;
-		else
-			return -1;
-		} });
+			@Override 
+			public int compare(comp p1, comp p2) {
+			if(p1.a == p2.a)
+				return 0;
+			else if(p1.a > p2.a)
+				return 1;
+			else
+				return -1;
+			} 
+		});
 		int x[] = new int[3];
 		System.out.println(k+" -nearest neighbour are:");
-		for(comp temp:al)
-		{
+		for(comp temp:al) {
 			if(k==0)
 				break;
 			System.out.println(temp.x+" "+temp.y+" "+temp.b);

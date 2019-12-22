@@ -59,8 +59,6 @@ public class Missing {
 				row[col]=maxValName;
 			}
 		}
-		
-		
 	}
 	
 	public void missingInteger(int col, String defValue) {

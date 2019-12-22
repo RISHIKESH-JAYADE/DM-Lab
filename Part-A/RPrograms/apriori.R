@@ -4,9 +4,6 @@ library(arulesViz)
 
 data <- Groceries
 
-#display the first 10 transactions
-inspect(Groceries[1:10])
-
 #generate and display frequent itemsets in decreasing order of support
 itemSets <- apriori(Groceries, parameter=list(minlen=1, maxlen=10,sup=0.02, target="frequent itemsets"))
 inspect(sort(itemSets,by="support"))

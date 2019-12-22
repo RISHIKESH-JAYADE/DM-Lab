@@ -18,8 +18,8 @@ class kmeans
 	     return a;
 	}
 	public static double dist(double p,double q,double r,double s) {
-	double res = Math.pow((p-r),2)+Math.pow((q-s),2);
-	     return Math.sqrt(res);
+		double res = Math.pow((p-r),2)+Math.pow((q-s),2);
+		return Math.sqrt(res);
 	}
 	public static void main(String args[]) throws FileNotFoundException, IOException
 	{
@@ -40,27 +40,26 @@ class kmeans
 		ArrayList<record> c1 = new ArrayList<>(); 
 		ArrayList<record> c2 = new ArrayList<>(); 
 		ArrayList<record> c3 = new ArrayList<>(); 
-		for(int i=0;i<100;i++)
-		{
-		           c1.clear();c2.clear();c3.clear();
-		           for(record r:al)
-		           {
-		                ArrayList<Double> t = new ArrayList<>();
-						double p = dist(r.attr1,r.attr2,(centroid.get(0)).attr1,(centroid.get(0)).attr2 );
-						double q = dist(r.attr1,r.attr2,(centroid.get(1)).attr1,(centroid.get(1)).attr2 );
-						double s = dist(r.attr1,r.attr2,(centroid.get(2)).attr1,(centroid.get(2)).attr2 );
-		                t.add(p);
-		                t.add(q);
-		                t.add(s);
-		                double res = Collections.min(t);
-		                if(res == p){c1.add(r);}
-		                if(res == q){c2.add(r);}
-		                if(res == s){c3.add(r);}
-		           }
-		           centroid.clear();
-		           centroid.add(calc(c1));
-		           centroid.add(calc(c2));
-		           centroid.add(calc(c3));
+		for(int i=0;i<100;i++){
+			c1.clear();c2.clear();c3.clear();
+			for(record r:al)
+			{
+				ArrayList<Double> t = new ArrayList<>();
+				double p = dist(r.attr1,r.attr2,(centroid.get(0)).attr1,(centroid.get(0)).attr2 );
+				double q = dist(r.attr1,r.attr2,(centroid.get(1)).attr1,(centroid.get(1)).attr2 );
+				double s = dist(r.attr1,r.attr2,(centroid.get(2)).attr1,(centroid.get(2)).attr2 );
+				t.add(p);
+				t.add(q);
+				t.add(s);
+				double res = Collections.min(t);
+				if(res == p){c1.add(r);}
+				if(res == q){c2.add(r);}
+				if(res == s){c3.add(r);}
+			}
+			centroid.clear();
+			centroid.add(calc(c1));
+			centroid.add(calc(c2));
+			centroid.add(calc(c3));
 		}
 		System.out.println("------0th cluster--------"); for(record r:c1)
 		System.out.println(r.attr1 +" "+r.attr2); System.out.println("------1th cluster--------"); for(record r:c2)
