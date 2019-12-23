@@ -2,7 +2,7 @@
 library(arules)
 library(arulesViz)
 
-data <- Groceries
+data(Groceries)
 
 #generate and display frequent itemsets in decreasing order of support
 itemSets <- apriori(Groceries, parameter=list(minlen=1, maxlen=10,sup=0.02, target="frequent itemsets"))
